@@ -7,14 +7,20 @@
 
 import UIKit
 
-class NewStudentViewController: UIViewController {
+class NewStudentViewController: UIViewController, MySegueProtocol {
 
-
+    @IBOutlet weak var ViewControllerNew: UIView!
+    
+    func getVideContainer(identifier: String) -> UIView {
+        return ViewControllerNew;
+    }
+    
     @IBOutlet weak var phoneTv: UITextField!
     @IBOutlet weak var nameTv: UITextField!
     @IBOutlet weak var idTv: UITextField!
     @IBOutlet weak var addressTv: UITextField!
     @IBOutlet weak var avatarImgv: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,12 +33,11 @@ class NewStudentViewController: UIViewController {
         student.phone = phoneTv.text
         student.address = addressTv.text
         Model.instance.add(student: student)
-        self.navigationController?.popViewController(animated: true)
+        performSegue(withIdentifier: "SaveSegue", sender: self)
     }
     
     @IBAction func cancel(_ sender: Any) {
         performSegue(withIdentifier: "CancelSegue", sender: self)
-        
     }
     
     

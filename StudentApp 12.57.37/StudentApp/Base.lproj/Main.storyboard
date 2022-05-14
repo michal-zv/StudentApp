@@ -79,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="1544.9275362318842" y="-1168.5267857142856"/>
         </scene>
-        <!--Student-->
+        <!--Student Details View Controller-->
         <scene sceneID="But-tF-Sk2">
             <objects>
                 <viewController storyboardIdentifier="StudentDetailsController" id="eyb-kZ-Whz" customClass="StudentDetailsViewController" customModule="StudentApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,9 +88,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="RAQ-Ap-Glo">
-                                <rect key="frame" x="43" y="117" width="327" height="222"/>
+                                <rect key="frame" x="31.422535211268041" y="117" width="327.00000000000023" height="222.00000000000045"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9B-SJ-6au">
+                                <rect key="frame" x="135.53521126760552" y="62.999999999999773" width="117" height="21.000000000000227"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUJ-V3-ocU">
                                 <rect key="frame" x="43" y="395" width="96" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -151,9 +158,7 @@
                         <viewLayoutGuide key="safeArea" id="H0p-mE-tG6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Student" id="EVb-pd-zXe">
-                        <barButtonItem key="backBarButtonItem" title="Student" id="SfG-Gy-bcI"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="e78-CY-PZk"/>
                     <connections>
                         <outlet property="addressLabel" destination="8qs-q6-B26" id="JkE-Yn-WM3"/>
                         <outlet property="avatarImg" destination="RAQ-Ap-Glo" id="oht-Jc-eCW"/>
@@ -164,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1j-Zb-g6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2386" y="-1119"/>
+            <point key="canvasLocation" x="2343" y="-1169"/>
         </scene>
         <!--New Student View Controller-->
         <scene sceneID="P70-2h-Ym8">
@@ -211,6 +216,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="save:" destination="HkU-vh-pns" eventType="touchUpInside" id="ewL-7x-WI0"/>
+                                    <segue destination="IRw-Jp-RZR" kind="custom" identifier="SaveSegue" customClass="MySegue" customModule="StudentApp" customModuleProvider="target" id="MrY-9q-1fP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdH-jA-A5b">
@@ -221,12 +227,12 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="cancel:" destination="HkU-vh-pns" eventType="touchUpInside" id="Bvi-SC-iAc"/>
-                                    <segue destination="iW2-sY-j9r" kind="custom" identifier="CancelSegue" customClass="MySegue" customModule="StudentApp" customModuleProvider="target" id="B5C-gA-TnM"/>
+                                    <action selector="cancel:" destination="HkU-vh-pns" eventType="touchUpInside" id="Sva-6U-kYB"/>
+                                    <segue destination="IRw-Jp-RZR" kind="custom" identifier="CancelSegue" customClass="MySegue" customModule="StudentApp" customModuleProvider="target" id="r99-1m-rUb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Student" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJn-He-1uO">
-                                <rect key="frame" x="144.27230046929526" y="58.999999999999545" width="99.000000000000227" height="21.000000000000455"/>
+                                <rect key="frame" x="144.33333333333331" y="63" width="99" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -237,6 +243,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="ViewControllerNew" destination="76B-cW-gmQ" id="Xlm-No-YmG"/>
                         <outlet property="addressTv" destination="Pfx-1W-FRY" id="5Kd-eb-MR5"/>
                         <outlet property="avatarImgv" destination="oY2-V2-mBG" id="L9X-JA-7pb"/>
                         <outlet property="idTv" destination="a2J-vZ-kCd" id="0TX-Kk-AzF"/>
@@ -291,6 +298,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3r-7b-gkz">
+                                <rect key="frame" x="0.0" y="742" width="390" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title=""/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bK-c7-yWJ">
                                 <rect key="frame" x="172" y="769" width="46" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -338,7 +355,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B5C-gA-TnM"/>
+        <segue reference="MrY-9q-1fP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="avatar" width="100" height="100"/>
